@@ -1,0 +1,207 @@
+*Jasmine-snippets-for-snipMate.txt*
+
+This set of snipMate snippets aims to make developing tests with Jasmine quicker and easier.
+
+File:           Jasmine-snippets-for-snipMate.vim
+Author:         Braian Egan <http://www.vim.org/account/profile.php?user_id=21464>
+Version:        0.1.0
+Required:       Vim version 7.0
+Note:           Jasmine-snippets-for-snipMate needs snipMate.
+	        http://www.vim.org/scripts/script.php?script_id=2540
+	        Please install snipmate.vim before use
+	        Jasmine-snippets-for-snipMate.
+
+contents        *Jasmine-snippets-for-snipMate-contents*
+
+introduction    |Jasmine-snippets-for-snipMate-introduction|
+example         |Jasmine-snippets-for-snipMate-example|
+snippets        |Jasmine-snippets-for-snipMate-snippets|
+    After Each                  |Jasmine-snippets-for-snipMate-snippets-aft|
+    Any                         |Jasmine-snippets-for-snipMate-snippets-any|
+    Before Each                 |Jasmine-snippets-for-snipMate-snippets-bef|
+    Describe                    |Jasmine-snippets-for-snipMate-snippets-des|
+    Expect not to be defined    |Jasmine-snippets-for-snipMate-snippets-notd|
+    Expect not to be falsy      |Jasmine-snippets-for-snipMate-snippets-notf|
+    Expect not to be null       |Jasmine-snippets-for-snipMate-snippets-notn|
+    Expect to be truthy         |Jasmine-snippets-for-snipMate-snippets-nott|
+    Expect not to contain       |Jasmine-snippets-for-snipMate-snippets-notc|
+    Expect not to equal         |Jasmine-snippets-for-snipMate-snippets-note|
+    Expect not to match         |Jasmine-snippets-for-snipMate-snippets-notm|
+    Expect not                  |Jasmine-snippets-for-snipMate-snippets-notx|
+    Expect to be defined        |Jasmine-snippets-for-snipMate-snippets-ed|
+    Expect to be falsy          |Jasmine-snippets-for-snipMate-snippets-ef|
+    Expect to be null           |Jasmine-snippets-for-snipMate-snippets-en|
+    Expect to be truthy         |Jasmine-snippets-for-snipMate-snippets-et|
+    Expect to contain           |Jasmine-snippets-for-snipMate-snippets-ec|
+    Expect to equal             |Jasmine-snippets-for-snipMate-snippets-ee|
+    Expect to match             |Jasmine-snippets-for-snipMate-snippets-em|
+    Expect was called with      |Jasmine-snippets-for-snipMate-snippets-escw|
+    Expect was called           |Jasmine-snippets-for-snipMate-snippets-esc|
+    Expect was not called with  |Jasmine-snippets-for-snipMate-snippets-notscw|
+    Expect was not called       |Jasmine-snippets-for-snipMate-snippets-notsc|
+    Expect                      |Jasmine-snippets-for-snipMate-snippets-ex|
+    It                          |Jasmine-snippets-for-snipMate-snippets-it|
+    Runs                        |Jasmine-snippets-for-snipMate-snippets-ru|
+    Spy on and call fake        |Jasmine-snippets-for-snipMate-snippets-scf|
+    Spy on and call through     |Jasmine-snippets-for-snipMate-snippets-sct|
+    Spy on and return           |Jasmine-snippets-for-snipMate-snippets-sr|
+    Spy on and throw            |Jasmine-snippets-for-snipMate-snippets-st|
+    Spy on                      |Jasmine-snippets-for-snipMate-snippets-s|
+    Waits (wa)                  |Jasmine-snippets-for-snipMate-snippets-wa|
+
+==============================================================================
+introduction                  *Jasmine-snippets-for-snipMate-introduction*
+
+Jasmine (http://pivotal.github.com/jasmine/) is a behavior-driven-development framework for JavaScript with some very nice features. This set of snipMate snippets aims to make developing tests with Jasmine quicker and easier.
+
+==============================================================================
+example                       *Jasmine-snippets-for-snipMate-example*
+
+For example, rather than typing out the full:
+
+"description('Description Here', function() {});"
+
+You can type "des<TAB>". This will create the full description block, with convenient tab stops. Tre magnifique!
+
+==============================================================================
+snippet                       *Jasmine-snippets-for-snipMate-snippets*
+
+After Each                    *Jasmine-snippets-for-snipMate-snippets-aft*
+snippet aft
+        afterEach(function() { 
+                ${1} 
+        }
+
+Any                           *Jasmine-snippets-for-snipMate-snippets-any*
+snippet any
+        jasmine.any(${1})
+
+Before Each                   *Jasmine-snippets-for-snipMate-snippets-bef*
+snippet bef
+        beforeEach(function() {
+                ${1}
+        });
+
+Describe                      *Jasmine-snippets-for-snipMate-snippets-des*
+snippet des
+        describe("${1:description}", function() {
+                ${2}
+        });${3}        
+
+Expect not to be defined      *Jasmine-snippets-for-snipMate-snippets-notd*
+snippet notd
+        expect(${1:target}).not.toBeDefined();${2}
+
+Expect not to be falsy        *Jasmine-snippets-for-snipMate-snippets-notf*
+snippet notf
+        expect(${1:target}).not.toBeFalsy();${2}
+
+Expect not to be null         *Jasmine-snippets-for-snipMate-snippets-notn*
+snippet notn
+        expect(${1:target}).not.toBeNull();${2}
+
+Expect to be truthy           *Jasmine-snippets-for-snipMate-snippets-nott*
+snippet nott
+        expect(${1:target}).not.toBeTruthy();${2}
+
+Expect not to contain         *Jasmine-snippets-for-snipMate-snippets-notc*
+snippet notc
+        expect(${1:target}).not.toContain(${2:value});${3}
+
+Expect not to equal           *Jasmine-snippets-for-snipMate-snippets-note*
+snippet note
+        expect(${1:target}).not.toEqual(${2:value});${3}
+
+Expect not to match           *Jasmine-snippets-for-snipMate-snippets-notm*
+snippet notm
+        expect(${1:target}).not.toBeDefined();${2}
+
+Expect not                    *Jasmine-snippets-for-snipMate-snippets-notx*
+snippet notx
+        expect(${1:target}).not;${2}
+
+Expect to be defined          *Jasmine-snippets-for-snipMate-snippets-ed*
+snippet ed
+        expect(${1:target}).toBeDefined();${2}
+
+Expect to be falsy            *Jasmine-snippets-for-snipMate-snippets-ef*
+snippet ef
+        expect(${1:target}).toBeFalsy();${2}
+
+Expect to be null             *Jasmine-snippets-for-snipMate-snippets-en*
+snippet en
+        expect(${1:target}).toBeNull();${2}
+
+Expect to be truthy           *Jasmine-snippets-for-snipMate-snippets-et*
+snippet et
+        expect(${1:target}).toBeTruthy();${2}
+
+Expect to contain             *Jasmine-snippets-for-snipMate-snippets-ec*
+snippet ec
+        expect(${1:target}).toContain(${2:value});${3}
+
+Expect to equal               *Jasmine-snippets-for-snipMate-snippets-ee*
+snippet ee
+        expect(${1:target}).toEqual(${2:value});${3}
+
+Expect to match               *Jasmine-snippets-for-snipMate-snippets-em*
+snippet em
+        expect(${1:target}).toMatch(${2:pattern});${3}
+
+Expect was called with        *Jasmine-snippets-for-snipMate-snippets-escw*
+snippet escw
+        expect(${1:target}).wasCalledWith(${2:arguments});${3}
+
+Expect was called             *Jasmine-snippets-for-snipMate-snippets-esc*
+snippet esc
+        expect(${1:target}).wasCalled();${2}
+
+Expect was not called with    *Jasmine-snippets-for-snipMate-snippets-notscw*
+snippet notscw
+        expect(${1:target}).wasNotCalledWith(${2:arguments});${3}
+
+Expect was not called         *Jasmine-snippets-for-snipMate-snippets-notsc*
+snippet notsc
+        expect(${1:target}).wasNotCalled();${3}
+
+Expect                        *Jasmine-snippets-for-snipMate-snippets-ex*
+snippet ex
+        expect(${1:target});${2}
+
+It                            *Jasmine-snippets-for-snipMate-snippets-it*
+snippet it
+        it("${1:description}", function() {
+                ${2}
+        });${3}
+
+Runs                          *Jasmine-snippets-for-snipMate-snippets-ru*
+snippet ru
+        runs(function() {
+                ${1}
+        });${2}
+
+Spy on and call fake          *Jasmine-snippets-for-snipMate-snippets-scf*
+snippet scf
+        spyOn(${1:object}, "${2:method}").andCallFake(${3:function});${4}
+
+Spy on and call through       *Jasmine-snippets-for-snipMate-snippets-sct*
+snippet sct
+        spyOn(${1:object}, "${2:method}").andCallThrough();${3}
+
+Spy on and return             *Jasmine-snippets-for-snipMate-snippets-sr*
+snippet sr
+        spyOn(${1:object}, "${2:method}").andReturn(${3:arguments});${4}
+
+Spy on and throw              *Jasmine-snippets-for-snipMate-snippets-st*
+snippet st
+        spyOn(${1:object}, "${2:method}").andThrow(${3:exception});${4}
+
+Spy on                        *Jasmine-snippets-for-snipMate-snippets-s*
+snippet s
+        spyOn(${1:object}, "${2:method}");${3}
+
+Waits (wa)                    *Jasmine-snippets-for-snipMate-snippets-wa*
+snippet wa
+        waits(${1});${2}
+
+vim:tw=78:ts=8:ft=help:norl:
