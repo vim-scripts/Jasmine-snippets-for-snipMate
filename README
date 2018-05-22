@@ -1,6 +1,6 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=3249
 
-Jasmine (http://pivotal.github.com/jasmine/) is a behavior-driven-development framework for JavaScript with some very nice features. This set of snipMate snippets aims to make developing tests with Jasmine quicker and easier.
+Jasmine (https://jasmine.github.io/) is a behavior-driven-development framework for JavaScript with some very nice features. This set of snipMate snippets aims to make developing tests with Jasmine quicker and easier.
 
 For example, rather than typing out the full:
 
